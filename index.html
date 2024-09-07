@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Sneakers Product Page</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="nav_info">
+                <div class="logo_container">
+                    <img id="btn_menu" onclick="showsidebar()" src="images/icon-menu.svg" alt="">
+                    <img src="images/logo.svg" alt="logo">
+                </div>
+                <div id="navbar">
+                    <ul>
+                        <li class="nav_links">Collections</li>
+                        <li class="nav_links">Men</li>
+                        <li class="nav_links">Women</li>
+                        <li class="nav_links">About</li>
+                        <li class="nav_links">Contact</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="nav_account">
+                <p id="order_number"> </p>
+                <img class="cart_image" onclick="toggle_dialog()" src="images/icon-cart.svg" alt="icon-cart">
+                <img class="profile_image" src="images/image-avatar.jpg" alt="image-avatar">
+                
+            </div>
+        </nav>
+        <main>
+            <div class="product_gallery">
+                <img id="display_image" src="images/image-product-1.jpg" alt="product-image-one">
+                <div class="product_image_selector">
+                    <div class="thumbnail_container selected_thumbnail" onclick="changeImage(1)"><img class="thumbnail_image" src="images/image-product-1-thumbnail.jpg" alt="image-product-1-thumbnail"></div>
+                    <div class="thumbnail_container" onclick="changeImage(2)"><img class="thumbnail_image" src="images/image-product-2-thumbnail.jpg" alt="image-product-2-thumbnail"></div>
+                    <div  class="thumbnail_container" onclick="changeImage(3)"><img class="thumbnail_image" src="images/image-product-3-thumbnail.jpg" alt="image-product-3-thumbnail"></div>
+                    <div  class="thumbnail_container" onclick="changeImage(4)"><img class="thumbnail_image" src="images/image-product-4-thumbnail.jpg" alt="image-product-4-thumbnail"></div>
+                </div>
+                <div class="slideshow-container fade">
+
+                    <!-- Full images -->
+                    <div class="slide">
+                        <img src="images/image-product-1.jpg" style="width:100%">
+                    </div>
+                
+                    <div class="slide">
+                        <img src="images/image-product-2.jpg" style="width:100%">
+                    </div>
+                
+                    <div class="slide">
+                        <img src="images/image-product-3.jpg" style="width:100%">
+                         
+                    </div>
+            
+                    <div class="slide">
+                        <img src="images/image-product-4.jpg" style="width:100%">   
+                    </div>
+                
+                    <!-- Back and forward buttons -->
+                    <a class="Back" onclick="plusSlides(-1)"><img src="images/icon-previous.svg" alt=""></a>
+                    <a class="forward" onclick="plusSlides(1)"><img src="images/icon-next.svg" alt=""></a>
+                </div>
+                
+            </div>
+            <div id="checkout_dialog" class="checkout_dialog">
+                <h5>Cart</h5>
+                
+                <!--<p>Your cart is empty.</p>-->
+                <div id="inner_dialog" class="inner_dialog">
+                    <div><img class="thumbnail_image" src="images/image-product-1-thumbnail.jpg" alt="thumbnail image"></div>
+                    <div>
+                        <p>Fall Limited Edition Sneakers <br>
+                        <span>$125.00 x </span><span id="amount_of_product">3</span> <strong>$<span id="total_cost">375.00</span></strong></p>
+                    </div>
+                    <div><img class="delete_image" onclick="delete_order()" src="images/icon-delete.svg" alt=""></div>
+                    
+                </div>
+                <button type="button" id="checkout_btn" class="checkout_btn">Checkout</button>
+                    <p id="empty_notice">Your cart is empty.</p>
+            </div>
+            
+            <div id="sidebar">
+                <div class="sidebar_inner">
+                    <img class="cancel_icon" onclick="hidesidebar()" src="images/icon-close.svg" alt="">
+                    <ul>
+                        <li class="nav_links">Collections</li>
+                        <li class="nav_links">Men</li>
+                        <li class="nav_links">Women</li>
+                        <li class="nav_links">About</li>
+                        <li class="nav_links">Contact</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="product_information">
+                <p class="company_title">SNEAKER COMPANY</p>
+                <h1>Fall Limited Edition <br> Sneakers</h1>
+                <p class="product_description">These low-profile sneakers are your ideal casual companion. With a sturdy rubber outsole, they’re built to endure whatever the weather brings.
+                </p>
+                <div class="price_display">
+                    <div class="current_price">
+                        <p class="price">$125.00</p>
+                        <p class="percentage_discount">50%</p>
+                    </div>
+                    <p class="original_price"><s>$250.00</s></p>
+                </div>
+                <div class="order_sorter">
+                    <div class="quantity_counter">
+                        <div class="minus" onclick="decreaseQuantity()">
+                            <img src="images/icon-minus.svg" alt="icon-minus">
+                        </div>
+                        <p id="product_quantity">0</p>
+                        <div class="plus" onclick="increaseQuantity()">
+                            <img src="images/icon-plus.svg" alt="icon-plus">
+                        </div>
+                    </div>
+                    <button type="button" id="btn_add" onclick="placeOrder()"><img class="cart_img" src="images/icon-cart.svg" alt="cart-icon"> Add to cart</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>coded by Omose Ikhalo</footer>
+    </div>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

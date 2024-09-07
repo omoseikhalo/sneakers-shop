@@ -1,0 +1,562 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+body{
+    font-family: 'Kumbh Sans', sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+}
+
+/* Countainer that holds the entire page component */
+.container{
+    margin: 0 auto;
+    min-width: 900px;
+    padding-top: 10px;
+    
+}
+/*Navigation */
+nav{
+    width: 850px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #d1d4dd;
+    padding: 0px 50px 15px;
+    margin: auto;
+    
+}
+.nav_info{
+    display: inline-flex;
+}
+
+nav ul{
+    display: flex;
+}
+#btn_menu{
+    margin-right: 20px;
+    display: none;
+}
+nav .logo_container{
+    padding-top: 25px;
+}
+nav .nav_links{
+    padding: 10px 15px;
+    list-style: none;
+    color: #95969a;
+    font-weight: 400;
+}
+nav .nav_account{
+    padding: 10px;
+    box-sizing: border-box;
+}
+#order_number{
+    position: absolute;
+    top: 3%;
+    margin-left: 7px;
+    background-color: #fd7e1e;
+    color: #ffffff;
+    font-weight: 400;
+    border-radius: 10px;
+    padding: 0px 7px;
+    text-align: center;
+    font-size: 12px;
+}
+.nav_account .profile_image{
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+}
+
+.nav_account .profile_image:hover{
+    border: 2px solid #d08951;
+}
+
+.nav_account .cart_image{
+    padding-bottom: 15px;
+    padding-right: 50px;
+    
+}
+/*.nav_account .cart_image:hover{
+    filter: brightness(0.1);
+}
+.nav_account .cart_image:active{
+    filter: brightness(0.1);
+}*/
+/* For the Checkout dialog */
+.checkout_dialog{
+    display: none;
+    position: absolute;
+    border-radius: 15px;
+    background-color: white;
+    width: 295px;
+    box-sizing: border-box;
+    box-shadow: 0px 5px 8px #cbcbcb;
+    top: 13%;
+    right: 12%;
+}
+
+.checkout_dialog h5{
+    font-weight: 700;
+    padding: 0px 15px 22px;
+    margin: 22px 0px 10px;
+    border-bottom: 1px solid #e8e7ec;
+}
+
+.inner_dialog{
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inner_dialog .thumbnail_image{
+    width: 40px;
+    border-radius: 5px;
+}
+.inner_dialog p{
+    font-size: 14px;
+    padding: 0px 10px;
+    color: #95969a;
+    margin: 0px;
+    
+}
+.checkout_dialog .checkout_btn{
+    background-color: hsl(26, 100%, 55%);
+    padding: 15px 50px;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-family: 'Kumbh Sans', sans-serif;
+    width: 90%;
+    margin: 5px 15px 20px;
+}
+.checkout_dialog .checkout_btn:hover{
+    background-color: #ffac6a;
+}
+.inner_dialog strong{
+    color: #000000;
+}
+.checkout_dialog .delete_image:hover{
+    filter: brightness(0.5);
+}
+#empty_notice{
+    text-align: center;
+    padding: 49px 0px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #70737a;
+}
+/* Main page content */
+main{
+    width: 100%;
+    padding-top: 80px;
+    padding-bottom: 50px;
+    margin: 0 auto;
+    justify-content: center;
+    display: inline-flex;
+    
+}
+/*Sidebar made invisible for big screens */
+#sidebar{
+    display: none;
+}
+/*Hide the slide show for mobile view */
+.slideshow-container{
+    display: none;
+}
+/* Component that shows images of the product */
+.product_gallery{
+    text-align: center;
+    width: 400px;
+    padding: 0px 10px;
+}
+
+/* Setting properties for the main/big product image displayed */
+.product_gallery #display_image{
+    height: 350px;
+    width: 360px;
+    border-radius: 13px;
+}
+
+/* component holding all the small product thumbnail images */
+.product_image_selector{
+    margin-top: 20px;
+    
+}
+
+/* Thumbnail images for the small images of the product */
+.product_image_selector .thumbnail_image{
+    height: 70px;
+    width: 70px;
+    border-radius: 10px;
+}
+
+/* div containing all the thumbnail images of the product */
+.product_image_selector div{
+    display: inline-block;
+    padding: 0px;
+    margin: 0px 10px;
+    padding-bottom: 0px;
+    height: 70px;
+    width: 70px;
+}
+
+/*Setting properties for the div container of the selected thumbnail image */
+.selected_thumbnail{
+    border: 2px solid #d68b51;
+    border-radius: 10px;
+}
+
+/*Setting the selected thumbnail image property*/
+.selected_thumbnail img{
+    filter: opacity(30%);
+}
+
+/*Container for the text information about the product */
+.product_information{
+    padding: 50px 20px;
+    width: 450px;
+    
+}
+
+/* The company's name display property 'Sneaker company' */
+.company_title{
+    font-weight: 700;
+    font-size: 14px;
+    color: #f38735;
+}
+
+/*Product name or title */
+.product_information h1{
+    font-weight: 700;
+    margin: 0px;
+}
+
+/*Product description */
+.product_description{
+    padding-top: 10px;
+    font-size: 16px;
+    color: #75767a;
+}
+
+/* Price segment properties for the current price, amount of discount and actual price */
+.current_price{
+    display: inline-flex;
+    margin: 0px;
+}
+.price_display .price{
+    font-size: 22px;
+    font-weight: 700;
+}
+.percentage_discount{
+    font-size: 14px;
+    font-weight: 700;
+    color: #e8873e;
+    background-color: #fdf1e8;
+    width: 25px;
+    padding: 3px 7px;
+    border-radius: 5px;
+    margin: 25px 20px 20px;
+}
+.original_price{
+    font-size: 14px;
+    font-weight: 700;
+    color: #b5b5be;
+    margin-top: -15px;
+}
+.order_sorter{
+    padding: 0px;
+}
+
+/*button for changing amount*/
+.quantity_counter{
+    display: inline-flex;
+    justify-content: space-between;
+    background-color: #f7f8fd;
+    border-radius: 7px;
+    padding-top: 2px;
+}
+
+.quantity_counter .minus{
+    margin-top: -3px;
+}
+.quantity_counter p{
+    margin-top: 1px;
+    margin-bottom: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px 17px;
+    width: 20%;
+    text-align: center;
+}
+.minus, .plus{
+    padding: 10px 15px;
+    cursor: pointer;
+    width: 40%;
+}
+.plus{
+    text-align: right;
+}
+
+/*.minus:hover img, .plus:hover img{
+    
+}*/
+/*Add to cart button */
+#btn_add{
+    margin:0px;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 700;
+    background-color: hsl(26, 100%, 55%);
+    border: none;
+    border-radius: 7px;
+    padding: 10px 55px 12px;
+    cursor: pointer;
+}
+
+#btn_add:hover{
+    background-color: #ffac6a;
+}
+
+/*cart image in the add to cart button */
+.cart_img{
+    width: 15px;
+    height: 13px;
+    padding-right: 10px;
+    filter: brightness(30);   
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    color: #ffac6a;
+}
+
+/* Setting component properties for 991px screen size */
+@media screen and (max-width: 991px){
+    .container{
+        padding-top: 0px;
+        min-width: 700px;
+        overflow-x: hidden;
+    }
+    nav{
+        width: 730px;
+        padding: 0px 0px 0px;
+        justify-content: center;
+        margin: auto;
+    }
+    #order_number{
+        top: 1.5%;
+    }
+    main{
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .nav_account .cart_image{
+        padding-right: 20px;
+    }
+    .product_information{
+        width: 350px;
+        padding: 30px 10px;
+    }
+    .product_gallery{
+        padding: 0px 0px;
+    }
+    #btn_add{
+        padding:  10px 35px 12px;
+    }
+    .checkout_dialog{
+        top: 9%;
+        right: 1%;
+    }
+}
+
+/*setting component properties for 768px screen size and below */
+@media  screen and (max-width: 768px) {
+    
+    .container{
+        min-width: 100%;
+        margin: 0 auto;
+        overflow-x: hidden;
+    }
+    nav .logo_container{
+        padding-top: 13px;
+        padding-left: 15px;
+    }
+    nav{
+        width: 100%;
+        padding: 0px 15px 10px 15px;
+        justify-content: space-between;
+        border-bottom: 0px;
+        box-sizing: border-box;
+    }
+    .nav_account .profile_image{
+        height: 25px;
+    }
+    .nav_account .cart_image{
+        padding-bottom: 0px;
+    }
+    #order_number{
+        top: 0%;
+    }
+    #btn_menu{
+        display: inline-flex;
+    }
+    main{
+        padding-top: 0px;
+        padding-bottom: 50px;
+        display: block;
+        width: 100%;
+    }
+    #navbar{
+        display: none;
+    }
+    .nav_account .cart_image{
+        padding-right: 10px;
+        margin-bottom: 2px;
+    }
+    .checkout_dialog{
+        top: 10%;
+        right: 2%;
+        box-shadow: none;
+    }
+    #sidebar{
+
+        top: 0px;
+        left: 0px;
+        background-color: rgba(0,0,0,0.75);
+        position: absolute;
+        margin: 0px;
+        width: 100%;
+        height: 1015px;
+    }
+    .sidebar_inner{
+        width: 70%;
+        background-color: white;
+        height: 100%;
+        width: 70%;
+    }
+    .cancel_icon{
+        margin-left: 30px;
+        width: 16px;
+        margin-top: 20px;
+    }
+    #sidebar ul{
+        display: block;
+        list-style: none;
+        margin-left: 0px;
+        padding-left: 30px;
+        margin-top: 50px;
+    }
+    #sidebar li{
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+    .product_gallery #display_image{
+        display: none;
+    }
+    .product_image_selector{
+        display: none;
+    }
+    .product_gallery{
+        width: 100%;
+    }
+    .slideshow-container{
+        display: block;
+        width: 100%;
+    }
+    .slideshow-container {
+        position: relative;
+        margin: auto;
+    }
+    
+    /* Make the images invisible by default */
+    .slide {
+        width: 100%;
+        display: none;
+    }
+
+    /* forward & Back buttons */
+    .Back, .forward {
+        cursor: pointer;
+        position: absolute;
+        top: 48%;
+        padding: 10px 15px;
+        font-weight: bold;
+        transition: 0.4s ease;
+        border-radius: 50%;
+        user-select: none;
+        background-color: #ffffff;
+    }
+
+    .Back img, .forward img{
+        text-align: center;
+        height: 13px;
+        padding-top: 3px;
+    }
+
+    /* Place the "back button" to the left */
+    .Back{
+        left: 10px;
+    }
+    /* Place the "forward button" to the right */
+    .forward {
+        right: 10px;
+    }
+
+    /*when the user hovers,add a black background with some little opacity */
+    .Back:hover, .forward:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+    
+    /* Faint animation */
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.4s;
+        animation-name: fade;
+        animation-duration: 1.4s;
+    }
+
+    @-webkit-keyframes fade {
+        from {opacity: .5}
+        to {opacity: 2}
+    }
+
+    @keyframes fade {
+        from {opacity: .5}
+        to {opacity: 2}
+    }
+    .product_information{
+        width: 100%;
+        padding: 30px 30px;
+        box-sizing: border-box;
+    }
+    .product_description{
+        font-size: 16px;
+    }
+    .price_display{
+        display: inline-flex;
+    }
+    .original_price{
+        padding-top: 43px;
+        position: absolute;
+        right: 30px;
+    }
+    
+    .order_sorter{
+        display: block;
+    }
+    .quantity_counter{
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    #btn_add{
+        margin-top: 30px;
+        width: 100%;
+        font-size: 16px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
